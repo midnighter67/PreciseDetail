@@ -7,10 +7,12 @@
 */
 body {
   font-family: "Gill Sans", Helvetica, Arial, "sans-serif";
-  background-color: yellow;
+}
+.my-body {
+  background-color: #D4D4D4;
 }
 footer {
-  background-color: #E9E7CE;
+  background-color: red;
 }
 .navbar {
   background-color:#E9E7CE;  
@@ -49,4 +51,9 @@ a .page-links {
 
 .heading-class {
   color: blue;
+}
+
+h1 {
+  font-family:'Courier New', Courier, monospace;
+  size: .5;
 }
