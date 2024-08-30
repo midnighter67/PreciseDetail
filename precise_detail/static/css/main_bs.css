@@ -6,12 +6,10 @@
     Dark Khaki:        #ABB26D
 */
 body {
-  font-family: "Gill Sans", Helvetica, Arial, "sans-serif";
-  background-color: yellow;
+  font-family: "Gill Sans", "Helvetica", "Arial", "sans-serif";
 }
-footer {
-  background-color: #E9E7CE;
-}
+
+/* navbar section */
 .navbar {
   background-color:#E9E7CE;  
   font-family: Gill Sans;
@@ -19,27 +17,15 @@ footer {
 .navbar-toggler {
   margin-left: 10%;
 }
-#logo {
-  padding-left: 20px;
-}
-.footer {
-  background-color:  #E9E7CE;
-}
+
+
 .btn {
   background-color: #E9E7CE; 
   border-color: #7F664A; 
   border-radius: 3px; 
   color: #7F664A;
 }
-.dropdown {
-  background-color: #E9E7CE; 
-  border-color: #7F664A; 
-  border-radius: 3px; 
-  color: #7F664A;
-}
-.container-bordered {
-  border: 2px solid black;
-}
+
 a .page-links {
   text-decoration: none;
 }
@@ -47,6 +33,62 @@ a .page-links {
   background-color: #7F664A; 
 }
 
-.heading-class {
-  color: blue;
+li {
+  text-decoration: none;
+}
+
+/* footer section */
+.site-footer{
+  padding: 5em 0 ;
+  background-color: #f9f2eb;
+  font-size: 14px;
+  color: green;
+}
+
+.site-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.site-footer a {
+  font-size: 20px;
+  color: #1fd655;
+  border-bottom: 1px solid  transparent;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #000;
+  border-bottom: 1px solid rgba(255,255,255,0);
+}
+
+.site-footer h2 {
+  font-size: 22px;
+  margin-bottom: 28px;
+  letter-spacing: 0.5em;
+  color: #fff;
+}
+
+.site-footer .footer-link li {
+  line-height: 2;
+  margin-bottom: 15px;
+}
+
+.navbar-toggler {
+  outline:none;
+}
+
+.logo1 {
+  font-family:'Garamond', 'Times New Roman', 'Baskerville', 'Crimson Bold';
+  font-size: 50px;
+  color: black;
+  padding-bottom: 10px 0 0 0;
+  margin-bottom: 0;
+}
+
+.logo2 {
+  font-family: 'Calibri', 'Arial', 'Verdana', 'Tahoma';
+  font-size: 24px;
+  padding-top: 0;
+  margin-top: 0;
+  color: black;
 }
