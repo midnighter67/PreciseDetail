@@ -18,6 +18,11 @@ body {
   margin-left: 10%;
 }
 
+/* body section */
+.common-image {
+  width: 100%;
+  opacity: 0.8;
+}
 
 .btn {
   background-color: #E9E7CE; 
@@ -90,5 +95,15 @@ li {
   font-size: 24px;
   padding-top: 0;
   margin-top: 0;
+  color: black;
+}
+
+.footer-phone {
+  font-size: 24px;
+  color: black;
+}
+
+.service-area {
+  font-size: 18px;
   color: black;
 }
