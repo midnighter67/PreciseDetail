@@ -6,9 +6,10 @@ from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 
 
 
-class EstimateForm(models.Model):
+class EstimateForm(forms.ModelForm):
     class Meta:
         model = Estimate
         fields = ('first', 'last', 'email', 'phone', 'address', 'city', 'zip', 'bed', 'bath', 'sqft', 'pets', 'frequency')
+        
         
     

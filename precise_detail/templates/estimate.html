@@ -1,8 +1,101 @@
 {% extends 'base.html' %}
 
 
-{% block content %} 
-<body class="d-flex flex-column min-vh-100">
-<h1 class="heading-class">Quote Page</h1>
-</body>
+{% block content %}
+
+<!--<body class="d-flex flex-column min-vh-100">-->
+<div class="container mt-5 mb-5">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="row mb-3">
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-3">
+                <input type="text" class="form-control" placeholder="First name" name="first">
+            </div>
+            <div class="col col-lg-3">
+                <input type="text" class="form-control" placeholder="Last name" name="last">
+            </div>
+            <div class="col col-lg-5"></div>
+        </div><!--row 1-->
+
+        <div class="row mb-3">
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-6">
+                <input type="text" class="form-control" placeholder="Email Address" name="email">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-6">
+                <input type="text" class="form-control" placeholder="Phone Number" name="phone">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-6">
+                <input type="text" class="form-control" placeholder="Address" name="address">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-6">
+                <input type="text" class="form-control" placeholder="City" name="city">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-6">
+                <input type="text" class="form-control" placeholder="Zip Code" name="zip">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-6">
+                <input type="text" class="form-control" placeholder="Number of Bedrooms" name="bed">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-6">
+                <input type="text" class="form-control" placeholder="Number of Bathrooms" name="bath">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-6">
+                <input type="text" class="form-control" placeholder="Square Footage of Home" name="sqft">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-6">
+                <input type="text" class="form-control" placeholder="Number of Pets" name="pets">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-6">
+                <input type="text" class="form-control" placeholder="Frequency of Cleaning" name="frequency">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col col-lg-1"></div>
+            <div class="col col-lg-6 text-center">
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+</div><!-- container -->
+<!--</body>-->
+
 {% endblock %}
