@@ -18,10 +18,10 @@ body {
   margin-left: 10%;
 }
 
-/* body section */
-.common-image {
-  width: 100%;
-  opacity: 0.8;
+
+
+#header-phone {
+  font-size: 1.5em;
 }
 
 .btn {
@@ -41,13 +41,42 @@ a .page-links {
 li {
   text-decoration: none;
 }
+/* end header section */
+
+/* body section */
+.common-image {
+  width: 100%;
+  opacity: 0.8;
+}
+/* end body section */
+
+/* home page */
+#serving-statement {
+  font-size: 2em;
+  font-family: arial;
+}
+
+.second-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home-paragraph {
+  text-wrap: wrap;
+  font-size: 1.3em;
+  padding: 10px 15px 10px 0;
+  font-family:'Times New Roman', Times, serif;
+}
+
+/* end home page */
 
 /* footer section */
 .site-footer{
   padding: 5em 0 ;
   background-color: #f9f2eb;
   font-size: 14px;
-  color: green;
+  color:black;
 }
 
 .site-footer p:last-child {
@@ -76,34 +105,26 @@ li {
 .site-footer .footer-link li {
   line-height: 2;
   margin-bottom: 15px;
+  text-align: left;
 }
 
 .navbar-toggler {
   outline:none;
 }
 
-.logo1 {
-  font-family:'Garamond', 'Times New Roman', 'Baskerville', 'Crimson Bold';
-  font-size: 50px;
-  color: black;
-  padding-bottom: 10px 0 0 0;
-  margin-bottom: 0;
-}
-
-.logo2 {
-  font-family: 'Calibri', 'Arial', 'Verdana', 'Tahoma';
-  font-size: 24px;
-  padding-top: 0;
-  margin-top: 0;
-  color: black;
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-phone {
-  font-size: 24px;
+  font-size: 30px;
   color: black;
 }
 
 .service-area {
   font-size: 18px;
   color: black;
+  width: 80%;
 }

@@ -18,7 +18,7 @@
 <nav class="navbar navbar-expand-lg bg-body-secondary bg-dark">
   <div class="container-fluid justify-content-center">
     <a class="navbar-brand px-4" href="{% url 'home' %}">
-      <img src="static/images/PreciseDetailLogoLarge.png" class="object-fit-lg-cover" width="225" height="75"
+      <img src="static/images/PreciseDetailLogo_MopBucket_caramel.png" class="object-fit-lg-cover" width="255" 
         alt="Precise Detail">
     </a>
     <!-- hamburger menu icon -->
@@ -41,10 +41,10 @@
           <a class="nav-link active mx-3" href="{% url 'estimate' %}">Estimate</a>
         </li>
       </ul>
-      <div>
-        <div class="container justify-content-center mb-3"><strong>(719) 650 - 2629</strong></div>
-        <a class="btn  btn-outline-dark btn-large bg-body-secondary me-5" href="{% url 'estimate' %}" role="button">Request
-          a Estimate</a>
+      <div >
+        <div class="container mb-3" id="header-phone"><strong>(719) 650 - 2629</strong></div>
+        <div><a class="btn  btn-outline-dark btn-large bg-body-secondary" href="{% url 'estimate' %}" role="button">Request
+          a Estimate</a></div>
       </div>
     </div>
 
@@ -62,50 +62,43 @@
 </body>
 
 <footer class="site-footer mt-auto">
-  <div class="container">
+  <!--<div class="test-container container">-->
     <div class="row mb-6">
-      <div class="col col-md-3 mt-5 text-center">   
-        <p class="logo1">Precise Detail</p>
-        <p class="logo2">Residential Housecleaning</p>
-      </div>
-      <div class="col col-md-1 mb-5 mx-3"></div>
-      <div class="col col-md-3 mb-5">
-      <h3>Quick Links</h3>
+
+      <div class="footer-logo col col-md-4">  
+        <img src="static/images/PreciseDetailLogo_MopBucket_caramel.png" class="logo-image object-fit-lg-cover" width="500" 
+        alt="Precise Detail">
+      </div><!-- col 1 (3) -->
+      <!--<div class="col col-md-1 mb-5 mx-3"></div>-->
+
+      <div class="col col-md-1"></div>
+      <div class="quick-links col col-md-3 px-5">
+        <h3>Quick Links</h3>
         <ul class="list-unstyled footer-link">
           <li><a href="{% url 'home' %}" >Home</a></li>
           <li><a href="{% url 'about' %}" >About</a></li>
           <li><a href="{% url 'services' %}" >Services</a></li>
           <li><a href="{% url 'estimate' %}" >Estimate</a></li>
         </ul>
-      </div>
-      <div class="col col-md-1 mb-5 mx-3"></div>
-      <div class="col col-md-3 mb-5">
+      </div><!-- col 2 (3) -->
+      <!--<div class="col col-md-1 mb-5 mx-3"></div>-->
+      
+      <div class="service-area col col-md-4 px-3">
       <h3>Serving</h3>
         <p class="service-area">Northern Colorado Springs, Gleneagle, Monument, Black Forest, and Falcon</p>
         <div class="footer-phone">(719) 650-2629</div>
-      </div>
-      <div class="col col-md-1 mb-5"></div>
+      </div><!-- col 3 (3) -->
+      <!--<div class="col col-md-1 mb-5"></div>-->
+
     </div><!-- row 1 -->
     <div class="row mt-2 text-center">
-      <div class="col col-md-12">
+      <div class="col col-md-12 mt-5">
         <p>&copy Precise Detail Residential Housecleaning.  All rights reserved.</p>
       </div>
-    </div>
-  </div>
+    </div><!-- row 2 -->
+  <!--</div> container -->
 </footer>
 
 
 
 
-<!-- bootstrap footer 
-<div class="container text-center bg-body-secondary">
-  <div class="row">
-    <div class="col">
-      Column
-    </div>
-    <div class="col">
-      Column
-    </div>
-  </div>
-</div>
--->
