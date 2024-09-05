@@ -1,9 +1,6 @@
 /* colors
-    Golden Rod:        #D5B740
-    Sienna:            #8A6822
-    Beige:             #E9E7CE
-    Dark Olive Green:  #7F664A
-    Dark Khaki:        #ABB26D
+    caramel:        #65350f
+    
 */
 body {
   font-family: "Gill Sans", "Helvetica", "Arial", "sans-serif";
@@ -51,12 +48,12 @@ li {
 /* end body section */
 
 /* home page */
-#serving-statement {
+.home-header {
   font-size: 2em;
   font-family: arial;
 }
 
-.second-image {
+.home-image {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,15 +61,46 @@ li {
 
 #home-paragraph {
   text-wrap: wrap;
-  font-size: 1.3em;
+  font-size: 1.2em;
   padding: 10px 15px 10px 0;
   font-family:'Times New Roman', Times, serif;
+}
+
+.home-2 {
+  background-color: #e6d9cb; 
+}
+
+.home-container {
+  width: 100%;
+}
+
+.tri-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 18rem;
+  background-color: #e6d9cb;
+  border-width: 0;
+}
+
+.card-body {
+  background-color: #e6d9cb;
+  border-width:0em;
+}
+
+.business-name {
+  color:#65350f;
+  font-family: 'garamond';
+  font-size: 1.2em;
 }
 
 /* end home page */
 
 /* footer section */
-.site-footer{
+.site-footer {
   padding: 5em 0 ;
   background-color: #f9f2eb;
   font-size: 14px;
