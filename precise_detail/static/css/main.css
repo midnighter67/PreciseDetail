@@ -1,53 +1,41 @@
 /* colors
-    caramel:        #65350f
-    
+     logo:      #65350f (caramel)
+     navbar bg: #E9E7CE
+     btn hover: #7F664A
+     footer bg: #f9f2eb
 */
-body {
-  font-family: "Gill Sans", "Helvetica", "Arial", "sans-serif";
-}
 
 /* navbar section */
 .navbar {
   background-color:#E9E7CE;  
   font-family: Gill Sans;
 }
+
 .navbar-toggler {
   margin-left: 10%;
 }
-
-
 
 #header-phone {
   font-size: 1.5em;
 }
 
-.btn {
-  background-color: #E9E7CE; 
-  border-color: #7F664A; 
-  border-radius: 3px; 
-  color: #7F664A;
-}
-
-a .page-links {
-  text-decoration: none;
-}
-.btn:hover{
-  background-color: #7F664A; 
-}
-
-li {
-  text-decoration: none;
-}
 /* end header section */
-
+/* ------------------ */
 /* body section */
+
+body {
+  font-family: "Gill Sans", "Helvetica", "Arial", "sans-serif";
+}
+
 .common-image {
   width: 100%;
   opacity: 0.8;
 }
-/* end body section */
 
+/* end body section */
+/* ------------------ */
 /* home page */
+
 .home-header {
   font-size: 2em;
   font-family: arial;
@@ -66,15 +54,11 @@ li {
   font-family:'Times New Roman', Times, serif;
 }
 
-.home-2 {
+.home-section-2 {
   background-color: #e6d9cb; 
 }
 
-.home-container {
-  width: 100%;
-}
-
-.tri-image {
+.section-2-images {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,8 +82,9 @@ li {
 }
 
 /* end home page */
-
+/* ------------------ */
 /* footer section */
+
 .site-footer {
   padding: 5em 0 ;
   background-color: #f9f2eb;
@@ -108,7 +93,7 @@ li {
 }
 
 .site-footer p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
 
 .site-footer a {
@@ -123,21 +108,16 @@ li {
   border-bottom: 1px solid rgba(255,255,255,0);
 }
 
-.site-footer h2 {
-  font-size: 22px;
-  margin-bottom: 28px;
-  letter-spacing: 0.5em;
-  color: #fff;
+.site-footer h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #000;
 }
 
 .site-footer .footer-link li {
   line-height: 2;
   margin-bottom: 15px;
   text-align: left;
-}
-
-.navbar-toggler {
-  outline:none;
 }
 
 .footer-logo {
@@ -156,3 +136,5 @@ li {
   color: black;
   width: 80%;
 }
+
+/* end footer section */

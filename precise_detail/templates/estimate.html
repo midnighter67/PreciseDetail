@@ -4,105 +4,42 @@
 {% block content %}
 
 <!--<body class="d-flex flex-column min-vh-100">-->
-<div class="container mt-5 mb-5">
+<div class="container mt-5 mb-5" style="background-color: green; width:100%;">
     <form method="POST">
         {% csrf_token %}
         <div class="row mb-3">
             <div class="col col-lg-1"></div>
             <div class="col col-lg-3">
-                <input type="text" class="form-control" placeholder="First name" name="first">
+                <label for="first-name">First</label>
+                <input type="text" class="form-control" id="first-name" placeholder="Enter first name" name="first">
             </div>
             <div class="col col-lg-3">
-                <input type="text" class="form-control" placeholder="Last name" name="last">
+                <label for="last-name">Last</label>
+                <input type="text" class="form-control" id="last-name" placeholder="Enter last name" name="last">
             </div>
-            <div class="col col-lg-5"></div>
+            <div class="col col-lg-4"></div>
         </div><!--row 1-->
 
-        <div class="row mb-3">
+        <div class="row mb-3"></div>
             <div class="col col-lg-1"></div>
-            <div class="col col-lg-6">
-                <input type="text" class="form-control" placeholder="Email Address" name="email">
+            <div class="col col-lg-3">
+                <label for="first-name">First</label>
+                <input type="text" class="form-control" id="first-name" placeholder="Enter first name" name="first">
             </div>
-        </div>
+            <div class="col col-lg-3">
+                <label for="last-name">Last</label>
+                <input type="text" class="form-control" id="last-name" placeholder="Enter last name" name="last">
+            </div>
+            <div class="col col-lg-4"></div>
+        </div><!--row 2-->
 
-        <div class="row mb-3">
-            <div class="col col-lg-1"></div>
-            <div class="col col-lg-6">
-                <input type="text" class="form-control" placeholder="Phone Number" name="phone">
-            </div>
-        </div>
 
-        <div class="row mb-3">
-            <div class="col col-lg-1"></div>
-            <div class="col col-lg-6">
-                <input type="text" class="form-control" placeholder="Address" name="address">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col col-lg-1"></div>
-            <div class="col col-lg-6">
-                <input type="text" class="form-control" placeholder="City" name="city">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col col-lg-1"></div>
-            <div class="col col-lg-6">
-                <input type="text" class="form-control" placeholder="Zip Code" name="zip">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col col-lg-1"></div>
-            <div class="col col-lg-6">
-                <input type="text" class="form-control" placeholder="Number of Bedrooms" name="bed">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col col-lg-1"></div>
-            <div class="col col-lg-6">
-                <!--<input type="text" class="form-control" placeholder="Number of Bathrooms" name="bath">-->
-                <select id="inputState" class="form-control" name="bath">
-                    <option selected>choose...</option>
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4 plus</option>
-                  </select>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col col-lg-1"></div>
-            <div class="col col-lg-6">
-                <input type="text" class="form-control" placeholder="Square Footage of Home" name="sqft">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col col-lg-1"></div>
-            <div class="col col-lg-6">
-                <input type="text" class="form-control" placeholder="Number of Pets" name="pets">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col col-lg-1"></div>
-            <div class="col col-lg-6">
-                <input type="text" class="form-control" placeholder="Frequency of Cleaning" name="frequency">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col col-lg-1"></div>
-            <div class="col col-lg-6 text-center">
-                <input type="submit" value="Submit" class="btn btn-primary">
-            </div>
-        </div>
     </form>
+        
+
+        
+
+       
 </div><!-- container -->
 <!--</body>-->
 
