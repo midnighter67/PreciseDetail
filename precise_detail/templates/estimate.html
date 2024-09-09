@@ -4,43 +4,126 @@
 {% block content %}
 
 <!--<body class="d-flex flex-column min-vh-100">-->
-<div class="container mt-5 mb-5" style="background-color: green; width:100%;">
-    <form method="POST">
-        {% csrf_token %}
-        <div class="row mb-3">
-            <div class="col col-lg-1"></div>
-            <div class="col col-lg-3">
-                <label for="first-name">First</label>
-                <input type="text" class="form-control" id="first-name" placeholder="Enter first name" name="first">
-            </div>
-            <div class="col col-lg-3">
-                <label for="last-name">Last</label>
-                <input type="text" class="form-control" id="last-name" placeholder="Enter last name" name="last">
-            </div>
-            <div class="col col-lg-4"></div>
-        </div><!--row 1-->
+<div class="container-fluid my-5 mx-2">
+    <div class="row text-center">
+        <h1>Request an estimate with <span class="business-name">Precise Detail</span></h1>
+    </div>
+    <div class="row">
+        <div class="col col-lg-7 ms-3 mb-5 mt-3 py-5"S>
+            <form class="estimate-form my-5" method="POST">
+                {% csrf_token %}
+                <div class="row form-group mx-2 mb-3 pt-3">
+                    <div class="col">
+                        <label for="first-name" class="ms-1">First</label>
+                        <input type="text" class="form-control" id="first-name" placeholder="Enter first name"
+                            name="first">
+                    </div>
+                    <div class="col form-group">
+                        <label for="last-name" class="ms-1">Last</label>
+                        <input type="text" class="form-control" id="last-name" placeholder="Enter last name"
+                            name="last">
+                    </div>
+                </div><!-- name row -->
 
-        <div class="row mb-3"></div>
-            <div class="col col-lg-1"></div>
-            <div class="col col-lg-3">
-                <label for="first-name">First</label>
-                <input type="text" class="form-control" id="first-name" placeholder="Enter first name" name="first">
-            </div>
-            <div class="col col-lg-3">
-                <label for="last-name">Last</label>
-                <input type="text" class="form-control" id="last-name" placeholder="Enter last name" name="last">
-            </div>
-            <div class="col col-lg-4"></div>
-        </div><!--row 2-->
+                <div class="row mx-2 mb-3">
+                    <div class="col form-group">
+                        <label for="email-address" class="ms-1">Email</label>
+                        <input type="email" class="form-control" id="email-address" placeholder="Enter email address"
+                            name="email">
+                    </div>
+                    <div class="col form-group">
+                        <label for="phone-number" class="ms-1">Phone</label>
+                        <input type="text" class="form-control" id="phone-number" placeholder="Enter phone number"
+                            name="phone">
+                    </div>
+                </div><!-- email and phone row -->
 
+                <div class="row mx-2 mb-3">
+                    <div class="col form-group">
+                        <label for="address" class="ms-1">Street Address</label>
+                        <input type="text" class="form-control" id="address" placeholder="Enter address" name="address">
+                    </div>
+                </div><!-- address row -->
 
-    </form>
-        
+                <div class="row mx-2 mb-3">
+                    <div class="col form-group">
+                        <label for="city" class="ms-1">City</label>
+                        <input type="text" class="form-control" id="city" placeholder="Enter city" name="city">
+                    </div>
+                    <div class="col form-group">
+                        <label for="zip-code" class="ms-1">Zip Code</label>
+                        <input type="text" class="form-control" id="zip-code" placeholder="Enter zip code" name="zip">
+                    </div>
+                </div><!-- city and zip row -->
 
-        
+                <div class="row mt-5 mb-2 text-center">
+                    <h4>Information about your home:</h4>
+                </div><!-- Header row -->
 
-       
+                <div class="row mx-2 mb-3">
+                    <div class="col form-group">
+                        <label for="bedrooms" class="ms-1">Bedrooms</label>
+                        <select id="bedrooms" class="form-control" name="beds">
+                            <option selected># bedrooms</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5+</option>
+                        </select>
+                    </div>
+                    <div class="col form-group">
+                        <label for="bathrooms" class="ms-1">Bathrooms</label>
+                        <select id="bathrooms" class="form-control" name="baths">
+                            <option selected># bathrooms</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4+</option>
+                        </select>
+                    </div>
+                    <div class="col form-group">
+                        <label for="square-footage" class="ms-1">Home Area</label>
+                        <input type="text" class="form-control" id="square-footage" placeholder="Square footage"
+                            name="sqft">
+                    </div>
+                    <div class="col form-group">
+                        <label for="pets" class="ms-1">Pets</label>
+                        <select id="pets" class="form-control" name="pets">
+                            <option selected>Pets?</option>
+                            <option>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col form-group">
+                        <label for="frequency" class="ms-1">Frequency</label>
+                        <select id="frequency" class="form-control" name="frequency">
+                            <option selected>Frequency</option>
+                            <option>Weekly</option>
+                            <option>Bi-weekly</option>
+                            <option>Monthly</option>
+                        </select>
+                    </div>
+                </div><!-- bed, bath, sqtf, and pets row -->
+                <div class="my-5 pb-5 text-center">
+                    <button type="submit" class="btn btn-secondary">Submit</button>
+                </div>
+            </form>
+        </div><!-- column 1 -->
+
+        <div class="col col-lg-4 ms-5 my-5 py-5">
+            <img src="static/images/cleaner_duster_vacuum.png" class="estimate-cartoon-image object-fit-lg-cover mt-5" alt="cartoon maid with duster and vacuum" width="500" />
+        </div><!-- column 2 -->
+    </div><!-- row -->
 </div><!-- container -->
+<div class="container-fluid center mx-0 px-0">
+    <img src="static/images/pexels-falling4utah-2724748-kitchen2-cropped-resized-again.jpg" class="estimate-image" alt="living room"/>
+    <div class="centered">
+        <p id="estimate-p-1"><strong>or give me a call</strong></p>
+        <p id="estimate-p-2"><strong>(719) 650-2629</strong></p>
+    </div>
+    
+</div>
 <!--</body>-->
 
 {% endblock %}

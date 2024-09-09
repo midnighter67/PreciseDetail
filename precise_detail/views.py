@@ -14,6 +14,20 @@ def estimate(request):
     """ Process form data and send alert email  """
     url = request.META.get('HTTP_REFERER')
     if request.method == "POST":
+        message_first = request.POST['first']
+        message_last = request.POST['last']
+        message_email = request.POST['email']
+        msg = message_last + ', ' + message_first + "\n\n" + "\n" + message_email
+        
+        send_mail(
+            "Precise Detail Estimate Request",
+            msg,
+            'chetley3@yahoo.com',
+            ['mikewooldridge67@gmail.com'],
+            fail_silently=False,
+        )
+        
+        """
         form = EstimateForm(request.POST)
         if form.is_valid():
             print("form is valid")
@@ -32,12 +46,13 @@ def estimate(request):
             data.frequency = form.cleaned_data.get('frequency') #['frequency']
             data.save()
             messages.success(request, ('estimate data saved'))
+            
         else:
             print("form is invalid")
             messages.success(request, ('Missing required fields'))        
             return render(request, 'estimate.html', {})
+        """
     else:
-        print("method not equal to post")
         return render(request, 'estimate.html', {})
         
     """
