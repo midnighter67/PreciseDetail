@@ -33,6 +33,15 @@ body {
   opacity: 0.8;
 }
 
+.page-header {
+  background-color: #faf8f5;
+}
+
+.page-header p {
+  font-family: 'Calibri';
+  font-size: 2.7vw;
+}
+
 /* end body section */
 /* ------------------ */
 /* home page */
@@ -48,11 +57,18 @@ body {
   align-items: center;
 }
 
-#home-paragraph {
-  text-wrap: wrap;
+.home-image img {
+  width: 100%;
+  height: auto;
+}
+
+.home-text p:first-child {
+  /**text-wrap: wrap;
   font-size: 1.2em;
-  padding: 10px 15px 10px 0;
-  font-family:'Times New Roman', Times, serif;
+  padding: 10px 15px 10px 15;
+  font-family:'Times New Roman', Times, serif;**/
+  font-family:'Times New Roman';
+  font-size: 1.5vw;
 }
 
 .home-section-2 {
@@ -76,6 +92,18 @@ body {
   border-width:0em;
 }
 
+.section-3-text h1 {
+  font-size: 2.2vw;
+}
+
+.section-3-text p:nth-child(2) {
+  font-size: 1.5vw;
+}
+
+.section-3-text p:nth-child(3) {
+  font-size: 3vw;
+}
+
 .business-name {
   color:#65350f;
   font-family: 'garamond';
@@ -95,15 +123,16 @@ h1:first-child{
 }
 
 .estimate-cartoon-image {
-  .home-image {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+    width:100%;
+    height:auto;
 }
 
 .estimate-image {
   width: 100%;
+  height: auto;
   opacity: 0.7;
 }
 
@@ -116,12 +145,12 @@ h1:first-child{
 }
 
 .centered p:first-child {
-  font-size: 4em;
+  font-size: 3.5vw;
   font-family: 'Calibri';
 }
 
 .centered p:last-child {
-  font-size: 7em;
+  font-size: 5.5vw;
 }
 
 .center {
@@ -129,7 +158,28 @@ h1:first-child{
   width: 100%;
   text-align: center;
 }
+
 /* end estimate page */
+/* ------------------ */
+/* services page */
+
+.about-text p:nth-child(-n+2) {
+  font-family:'Times New Roman';
+  font-size: 1.5vw;
+}
+
+/* end services page */
+/* ------------------ */
+/* about page */
+
+#image-roses {
+  max-width: 100%;
+  height: auto;
+  /* height: 500px; */
+  opacity: 0.9;
+}
+
+/* end about page */
 /* ------------------ */
 /* footer section */
 
