@@ -23,7 +23,7 @@ def estimate(request):
             "Precise Detail Estimate Request",
             msg,
             'chetley3@yahoo.com',
-            ['mikewooldridge67@gmail.com'],
+            ['chetley3@yahoo.com'],
             fail_silently=False,
         )
         
