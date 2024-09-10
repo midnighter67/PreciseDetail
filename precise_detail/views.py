@@ -14,22 +14,23 @@ def estimate(request):
     """ Process form data and send alert email  """
     url = request.META.get('HTTP_REFERER')
     if request.method == "POST":
-        message_first = request.POST['first']
-        message_last = request.POST['last']
-        message_email = request.POST['email']
-        msg = message_last + ', ' + message_first + "\n\n" + "\n" + message_email
-        
-        send_mail(
-            "Precise Detail Estimate Request",
-            msg,
-            'chetley3@yahoo.com',
-            ['chetley3@yahoo.com'],
-            fail_silently=False,
-        )
-        
-        """
         form = EstimateForm(request.POST)
         if form.is_valid():
+            try:
+                message_first = request.POST['first']
+                message_last = request.POST['last']
+                message_email = request.POST['email']
+                msg = message_last + ', ' + message_first + "\n\n" + "\n" + message_email
+                send_mail(
+                    "Precise Detail Estimate Request",
+                    msg,
+                    'chetley3@yahoo.com',
+                    ['chetley3@yahoo.com'],
+                    fail_silently=False,
+                )
+            except SMTPException:
+                messages.success(request, ('Submit failed'))
+                return redirect(url)
             print("form is valid")
             data = Estimate()
             data.first = form.cleaned_data.get('first') #['first']
@@ -51,36 +52,9 @@ def estimate(request):
             print("form is invalid")
             messages.success(request, ('Missing required fields'))        
             return render(request, 'estimate.html', {})
-        """
     else:
         return render(request, 'estimate.html', {})
         
-    """
-    requestor = Estimate.objects.get(id=estimate_id)
-    if request.method == "POST":
-        form = QuoteForm(request.POST)
-        if form.is_valid():
-            try:    
-                text = form.cleaned_data.get('text') 
-                msg = text + "\n\n" + consumer.first + " " + consumer.last + "\n" + consumer.email
-                send_mail(
-                    "Happy Home Quote Request",
-                    msg,
-                    'chetley3@yahoo.com',
-                    [provider.email],
-                    fail_silently=False,
-                )
-                messages.success(request, ('Request sent successfully!'))
-                return redirect(url)
-            except SMTPException:
-                messages.success(request, ('You must be logged in to get review list'))
-                return redirect(url)
-        else:
-            messages.success(request, ('Submit failed.'))
-            return render(request, 'quote.html', {"estimate":provider} )
-    else:
-        return render(request, 'quote.html', {'consumer':consumer, 'provider': provider} )
-    """
     return render(request, 'estimate.html', {})
 
 def about(request):
