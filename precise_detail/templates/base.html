@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewPort" content="width-device-width, initial-scale=1">
-  <link href="static\css\main.css" rel="stylesheet" />  <!-- static\css\main.css -->
+  <link href="{% static 'precisedetail/css/main.css' %}" rel="stylesheet" />  <!-- static\css\main.css -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -18,7 +18,7 @@
 <nav class="navbar navbar-expand-lg bg-body-secondary bg-dark">
   <div class="container-fluid justify-content-center">
     <a class="navbar-brand px-4" href="{% url 'home' %}">
-      <img src="static/images/PreciseDetailLogo_MopBucket_caramel.png" class="object-fit-lg-cover" width="255" 
+      <img src="{% static 'precisedetail/images/PreciseDetailLogo_MopBucket_caramel.png' %}" class="object-fit-lg-cover" width="255" 
         alt="Precise Detail"> <!-- static/images/PreciseDetailLogo_MopBucket_caramel.png -->
     </a>
     <!-- hamburger menu icon -->
@@ -51,7 +51,7 @@
   </div><!-- container-fluid -->
 </nav>
 <div>
-  <img class="common-image" src="static\images\pexels-falling4utah-1080721_kitchen-cropped.jpg"  alt="clean-room" />
+  <img class="common-image" src="{% static 'precisedetail/images/pexels-falling4utah-1080721_kitchen-cropped.jpg' %}"  alt="clean-room" /><!-- static\images\pexels-falling4utah-1080721_kitchen-cropped.jpg -->
 </div>
 </html>
 
@@ -66,8 +66,8 @@
     <div class="row mb-6">
 
       <div class="footer-logo col col-md-4">  
-        <img src="static/images/PreciseDetailLogo_MopBucket_caramel.png" class="logo-image object-fit-lg-cover" width="500" 
-        alt="Precise Detail">
+        <img src="{% static 'precisedetail/images/PreciseDetailLogo_MopBucket_caramel.png' %}" class="logo-image object-fit-lg-cover" width="500" 
+        alt="Precise Detail"> <!-- images/PreciseDetailLogo_MopBucket_caramel.png -->
       </div><!-- col 1 (3) -->
       <!--<div class="col col-md-1 mb-5 mx-3"></div>-->
 
