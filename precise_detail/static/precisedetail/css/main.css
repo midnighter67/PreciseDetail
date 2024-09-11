@@ -163,14 +163,16 @@ h1:first-child{
 /* ------------------ */
 /* services page */
 
-.about-text p:nth-child(-n+2) {
-  font-family:'Times New Roman';
-  font-size: 1.5vw;
-}
+
 
 /* end services page */
 /* ------------------ */
 /* about page */
+
+.about-text p:nth-child(-n+2) {
+  font-family:'Times New Roman';
+  font-size: 1.5vw;
+}
 
 #image-roses {
   max-width: 100%;
@@ -178,6 +180,51 @@ h1:first-child{
   /* height: 500px; */
   opacity: 0.9;
 }
+
+.about-text-2 p:nth-child(1) {
+  font-family:'Times New Roman';
+  font-size: 2.5vw;
+  padding: 0;
+  margin: 0;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  opacity: 0.7;
+}
+
+.about-why-text p {
+  font-family:'Times New Roman';
+  font-size: 2.1vw;
+}
+
+.checklist {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  background-color: #faf8f5;
+}
+
+
+.checklist ul {
+  font-family: sans-serif;
+  list-style-type: none;
+}
+
+.checklist ul li {
+  font-family: sans-serif;
+  font-size: 1.2vw;
+}
+
+.why-choose {
+  background-color: #faf8f5;;
+}
+
+.bullet {
+  padding-right: 4px;
+}
+
 
 /* end about page */
 /* ------------------ */
