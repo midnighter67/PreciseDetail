@@ -11,21 +11,128 @@
     <div class="col col-lg-2"></div>
 </div><!-- row 1 -->
 
-<div class="row">
+<div class="row mt-4">
     <div class="col col-lg-2"></div>
-    <div class="col-lg-4 py-8" style="background-color: orange;">
-        <p class="services-text" style="background-color: yellow;">I offer housecleaning at regular intervals - weekly, bi-weekly, and monthly. Depending on 
-            the condition of the home, the initial cleaning may take extra time.</p>
+    <div class="services-text col-lg-8 pt-5">
+        <p> I offer housecleaning at regular intervals - weekly, bi-weekly, and monthly. Depending on
+            the condition of the home, the initial cleaning may take extra time. I provide the
+            cleaning supplies. I will use your products upon request for wood, granite, tile, and
+            marble surfaces.</p>
+        <p> Standard cleaning will include the following services:</p>
     </div>
-    <!--<div class="col col-lg-4"></div>-->
+    <div class="col col-lg-2"></div>
 </div><!-- row 2 -->
 
 <div class="row">
     <div class="col col-lg-2"></div>
+    <div class="service-list col-lg-8 py-3">
+        <h4><strong>Home</strong></h4>
+        <ul>
+            <li>Ceiling fans dusted</li>
+            <li>Light fixtures dusted</li>
+            <li>Window sills and blinds dusted</li>
+            <li>Cobwebs removed</li>
+            <li>Outlets and light switches wiped</li>
+            <li>Lamps and lampshades cleaned</li>
+            <li>Furniture dusted and polished</li>
+            <li>Knick knacks dusted</li>
+            <li>Mirrors cleaned</li>
+            <li>Doors and door knobs wiped</li>
+            <li>Waste baskets emptied</li>
+            <li>Floors vacuumed/mopped</li>
+            <li>Spot clean cabinets</li>
+            <li>Vacuum pet hair from couches</li>
+        </ul>
+    </div>
+    <div class="col col-lg-2"></div>
+</div><!-- row 3 -->
+
+<div class="row">
+    <div class="col col-lg-2"></div>
+    <div class="service-list col-lg-8 py-3">
+        <h4><strong>Kitchen</strong></h4>
+        <ul>
+            <li>Counter tops</li>
+            <li>Sinks</li>
+            <li>Outside of appliances</li>
+        </ul>
+    </div>
+    <div class="col col-lg-2"></div>
+</div><!-- row 4 -->
+
+<div class="row">
+    <div class="col col-lg-2"></div>
+    <div class="service-list col-lg-8 py-3">
+        <h4><strong>Bathrooms</strong></h4>
+        <ul>
+            <li>Counter tops</li>
+            <li>Sinks</li>
+            <li>Mirrors</li>
+            <li>Fixtures</li>
+            <li>Tubs, showers, and toilets</li>
+        </ul>
+    </div>
+    <div class="col col-lg-2"></div>
+</div><!-- row 5 -->
+
+<div class="row">
+    <div class="col col-lg-2"></div>
+    <div class="service-list col-lg-8 py-3">
+        <h4><strong>Bedrooms</strong></h4>
+        <ul>
+            <li>Bed linens changed</li>
+            <li>Mirrors</li>
+        </ul>
+    </div>
+    <div class="col col-lg-2"></div>
+</div><!-- row 6 -->
+
+<div class="row">
+    <div class="col col-lg-2"></div>
+    <div class="service-list col-lg-8 py-3">
+        <h4><strong>Extras</strong> (substituted for services above)</h4>
+        <ul>
+            <li>Oil cabinets</li>
+            <li>Inside of appliances</li>
+            <li>Interior of reachable windows</li>
+            <li>Baseboards</li>
+        </ul>
+    </div>
+    <div class="col col-lg-2"></div>
+</div><!-- row 7 -->
+
+<div class="row py-5">
+    <div class="col col-lg-2"></div>
     <div class="test col-lg-8 py-5">
-        <a href="{% url 'estimate' %}" ><div class="services-button py-3 text-center">Get a Free Estimate</div></a>
+        <a href="{% url 'estimate' %}">
+            <div class="services-button py-3 text-center">Get a Free Estimate</div>
+        </a>
     </div>
     <div class="col col-lg-2 py-3"></div>
-</div><!-- row 3 -->
+</div><!-- row 8 -->
+
+<div class="row py-5">
+    <div class="col col-lg-2"></div>
+    <div class="service-map col col-lg-4 pb-5">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d83410.84398210031!2d-104.71648359391963!3d39.02046781413933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1726180042836!5m2!1sen!2sus"
+            width="500" height="325" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!--<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1gB2loCM8NBWUzWgshL_tu4PjgCk0UxU&ehbc=2E312F&noprof=1"
+            width="500" height="325" frameborder="0" style="border:0;"></iframe>-->
+    </div>
+    <div class="service-list col col-lg-4 ps-3 pt-3">
+        <h4>Serving the following areas:</h4>
+        <ul>
+            <li>Northern Colorado Springs</li>
+            <li>Black Forest</li>
+            <li>Monument</li>
+            <li>Falcon</li>
+        </ul>
+    </div>
+
+    <div class="col col-lg-2 my-5"></div>
+
+</div>
 
 {% endblock %}

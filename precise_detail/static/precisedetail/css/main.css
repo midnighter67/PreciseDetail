@@ -17,7 +17,7 @@
 }
 
 #header-phone {
-  font-size: 1.5em;
+  font-size: 1.5vw;
 }
 
 .navbar .navbar-collapse .nav-link {
@@ -191,10 +191,30 @@ h1:first-child{
   opacity: 0.9;
 }
 
-.services-text {
+.services-text p {
   font-family: 'Calibri';
-  font-size: 1.1vw;
+  font-size: 1.4vw;
 }
+
+.service-list {
+  font-family: 'Calibri';
+}
+
+.service-list ul li {
+  margin-bottom: 3px;
+  font-size: 1.2vw;
+}
+
+.service-map {
+  border: 0;
+}
+
+.service-area-list {
+  font-family: 'Calibri';
+}
+
+
+
 
 /* end services page */
 /* ------------------ */
