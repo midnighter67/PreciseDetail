@@ -5,17 +5,27 @@
 {% block content %}
 <div class="row page-header  mx-0">
     <div class="col col-lg-2"></div>
-    <div class="col-lg-8 py-2">
+    <div class="col col-lg-8 py-2">
         <p><span class="business-name">Precise Detail</span> Services</p>
     </div>
     <div class="col col-lg-2"></div>
-</div>
+</div><!-- row 1 -->
+
 <div class="row">
     <div class="col col-lg-2"></div>
-    <div class="col-lg-4 py-5">
-        
+    <div class="col-lg-4 py-8" style="background-color: orange;">
+        <p class="services-text" style="background-color: yellow;">I offer housecleaning at regular intervals - weekly, bi-weekly, and monthly. Depending on 
+            the condition of the home, the initial cleaning may take extra time.</p>
     </div>
-    <div class="col col-lg-6"></div>
-</div>
+    <!--<div class="col col-lg-4"></div>-->
+</div><!-- row 2 -->
+
+<div class="row">
+    <div class="col col-lg-2"></div>
+    <div class="test col-lg-8 py-5">
+        <a href="{% url 'estimate' %}" ><div class="services-button py-3 text-center">Get a Free Estimate</div></a>
+    </div>
+    <div class="col col-lg-2 py-3"></div>
+</div><!-- row 3 -->
 
 {% endblock %}

@@ -2,32 +2,37 @@
 <!DOCTYPE html>
 <!-- Header and footer markup extended to all template pages -->
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewPort" content="width-device-width, initial-scale=1">
-  <link href="{% static 'precisedetail/css/main.css' %}" rel="stylesheet" />  <!-- static\css\main.css -->
+  <!-- static\css\main.css -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/b8362869d4.js" crossorigin="anonymous"></script>
+  <link href="{% static 'precisedetail/css/main.css' %}" rel="stylesheet" />
   <title>Precise Detail</title>
 </head>
 
-<nav class="navbar navbar-expand-lg bg-body-secondary bg-dark">
-  <div class="container-fluid justify-content-center">
+<nav class="navbar navbar-expand-lg bg-body-secondary">
+  <div class="container-fluid py-2 mb-2">
+    <div>
     <a class="navbar-brand px-4" href="{% url 'home' %}">
-      <img src="{% static 'precisedetail/images/PreciseDetailLogo_MopBucket_caramel.png' %}" class="object-fit-lg-cover" width="255" 
-        alt="Precise Detail"> <!-- static/images/PreciseDetailLogo_MopBucket_caramel.png -->
+      <img src="{% static 'precisedetail/images/PreciseDetailLogo_MopBucket_caramel.png' %}" class="object-fit-lg-cover"
+        width="255" alt="Precise Detail"> <!-- static/images/PreciseDetailLogo_MopBucket_caramel.png -->
     </a>
+  </div>
     <!-- hamburger menu icon -->
-    <button class="my-toggler navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="my-toggler navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav  me-auto mb-2 mb-lg-0">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active mx-3" aria-current="page" href="{% url 'home' %}">Home</a>
         </li>
@@ -41,24 +46,27 @@
           <a class="nav-link active mx-3" href="{% url 'estimate' %}">Estimate</a>
         </li>
       </ul>
-      <div >
-        <div class="container mb-3" id="header-phone"><strong>(719) 650 - 2629</strong></div>
-        <div><a class="btn  btn-outline-dark btn-large bg-body-secondary" href="{% url 'estimate' %}" role="button">Request
-          an Estimate</a></div>
-      </div>
+    </div><!-- collapse -->
+    <div class="navbar-phone-estimate text-center">
+      <div class="container mb-3" id="header-phone"><strong>(719) 650 - 2629</strong></div>
+      <div><a class="btn  btn-outline-dark btn-large bg-body-secondary" href="{% url 'estimate' %}"
+          role="button">Request
+          an Estimate</a>
+      </div><!-- estimate button -->
     </div>
-
   </div><!-- container-fluid -->
 </nav>
 <div>
-  <img class="common-image" src="{% static 'precisedetail/images/pexels-falling4utah-1080721_kitchen-cropped.jpg' %}"  alt="clean-room" /><!-- static\images\pexels-falling4utah-1080721_kitchen-cropped.jpg -->
+  <img class="common-image" src="{% static 'precisedetail/images/pexels-falling4utah-1080721_kitchen-cropped.jpg' %}"
+    alt="clean-room" /><!-- static\images\pexels-falling4utah-1080721_kitchen-cropped.jpg -->
 </div>
+
 </html>
 
 <body>
-{% block content %}
+  {% block content %}
 
-{% endblock %}
+  {% endblock %}
 </body>
 
 <footer class="site-footer mt-auto">
@@ -83,7 +91,7 @@
       </div><!-- col 2 (3) -->
       <!--<div class="col col-md-1 mb-5 mx-3"></div>-->
       
-      <div class="service-area col col-md-4 px-3">
+      <div class="col col-md-4 px-3">
       <h3>Serving</h3>
         <p class="service-area">Northern Colorado Springs, Gleneagle, Monument, Black Forest, and Falcon</p>
         <div class="footer-phone">(719) 650-2629</div>
@@ -91,14 +99,11 @@
       <!--<div class="col col-md-1 mb-5"></div>-->
 
     </div><!-- row 1 -->
-    <div class="row mt-2 text-center">
-      <div class="col col-md-12 mt-5">
-        <p>&copy Precise Detail Residential Housecleaning.  All rights reserved.</p>
-      </div>
-    </div><!-- row 2 -->
+
+  <div class="row mt-2 text-center">
+    <div class="col col-md-12 mt-5">
+      <p>&copy Precise Detail Residential Housecleaning. All rights reserved.</p>
+    </div>
+  </div><!-- row 2 -->
   <!--</div> container -->
 </footer>
-
-
-
-
