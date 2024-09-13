@@ -22,7 +22,7 @@ def estimate(request):
                 message_first = request.POST['first']
                 message_last = request.POST['last']
                 message_email = request.POST['email']
-                msg = "using precise_detail key" + "\n" + message_last + ', ' + message_first + "\n\n" + "\n" + message_email
+                msg = "using precise_detail key" + "\n" + message_last + ', ' + message_first + "\n\n" + "\n" + message_email + "\n" + settings.EMAIL_HOST_USER
                 send_mail(
                     "Precise Detail Estimate Request",
                     msg,
