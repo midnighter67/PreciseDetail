@@ -19,15 +19,36 @@ def estimate(request):
         if form.is_valid():
             print("form is valid")
             try:
-                message_first = request.POST['first']
-                message_last = request.POST['last']
-                message_email = request.POST['email']
-                msg = "using precise_detail key" + "\n" + message_last + ', ' + message_first + "\n\n" + "\n" + message_email + "\n" + settings.EMAIL_HOST_USER
+                first = request.POST['first']
+                last = request.POST['last']
+                email = request.POST['email']
+                phone = request.POST['phone']
+                address = request.POST['address']
+                city = request.POST['city']
+                zip = request.POST['zip']
+                bed = request.POST['bed']
+                bath = request.POST['bath']
+                sqft = request.POST['sqft']
+                pets = request.POST['pets']
+                frequency = request.POST['frequency']
+                msg = "User info:" + "\n" + \
+                    "name:  " + last + ', ' + first + "\n"  + \
+                    "email:  " + email + "\n" + \
+                    "phone:  " + phone + "\n" + \
+                    "address:  " + address + "\n" + \
+                    "city:  " + city + "\n" + \
+                    "zip:  " + zip + "\n" + \
+                    "bedrooms:  " + bed + "\n" + \
+                    "bathrooms:  " + bath + "\n" + \
+                    "area:  " + sqft + "\n" + \
+                    "pets:  " + pets + "\n" + \
+                    "frequency:  " + frequency
+                            
                 send_mail(
                     "Precise Detail Estimate Request",
                     msg,
                     settings.EMAIL_HOST_USER,
-                    ['precise.detail@yahoo.com', 'chetley3@yahoo.com'],
+                    [settings.EMAIL_HOST_USER],
                     fail_silently=False,
                 )
             except SMTPException as e:
