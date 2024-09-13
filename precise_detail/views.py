@@ -3,6 +3,7 @@ from .forms import EstimateForm
 from .models import Estimate
 from smtplib import SMTPException
 from django.contrib import messages
+from django.conf import settings
 from django.core.mail import send_mail, EmailMessage
 
 
@@ -16,22 +17,23 @@ def estimate(request):
     if request.method == "POST":
         form = EstimateForm(request.POST)
         if form.is_valid():
+            print("form is valid")
             try:
                 message_first = request.POST['first']
                 message_last = request.POST['last']
                 message_email = request.POST['email']
-                msg = message_last + ', ' + message_first + "\n\n" + "\n" + message_email
+                msg = "using precise_detail key" + "\n" + message_last + ', ' + message_first + "\n\n" + "\n" + message_email
                 send_mail(
                     "Precise Detail Estimate Request",
                     msg,
-                    'chetley3@yahoo.com',
-                    ['chetley3@yahoo.com'],
+                    settings.EMAIL_HOST_USER,
+                    ['precise.detail@yahoo.com', 'chetley3@yahoo.com'],
                     fail_silently=False,
                 )
-            except SMTPException:
+            except SMTPException as e:
+                print(e)
                 messages.success(request, ('Submit failed'))
                 return redirect(url)
-            print("form is valid")
             data = Estimate()
             data.first = form.cleaned_data.get('first') #['first']
             data.last = form.cleaned_data.get('last') #['last']
