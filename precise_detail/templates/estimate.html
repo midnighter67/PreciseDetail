@@ -9,20 +9,22 @@
         <h1>Request an estimate from <span class="business-name">Precise Detail</span></h1>
     </div>
     <div class="row">
-        <div class="col col-lg-7 ms-3 mb-5 mt-3 py-5"S>
+        <div class="col col-lg-7 ms-3 mb-5 mt-3 py-5">
             <form class="estimate-form my-5" method="POST">
                 {% csrf_token %}
                 <div class="row form-group mx-2 mb-3 pt-3">
                     <div class="col">
-                        <label for="first-name" class="ms-1">First</label>
-                        <input type="text" class="form-control" id="first-name" placeholder="Enter first name"
-                            name="first">
+                        <label for="name" class="ms-1">First</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter name"
+                            name="name">
                     </div>
+                    <!--
                     <div class="col form-group">
                         <label for="last-name" class="ms-1">Last</label>
                         <input type="text" class="form-control" id="last-name" placeholder="Enter last name"
                             name="last">
                     </div>
+                    -->
                 </div><!-- name row -->
 
                 <div class="row mx-2 mb-3">
@@ -105,6 +107,12 @@
                         </select>
                     </div>
                 </div><!-- bed, bath, sqtf, and pets row -->
+                <div class="row mx-2 mb-3">
+                    <div class="col form-group my-3">
+                        <label for="comment" class="ms-1">Comment</label>
+                        <textarea class="form-control" id="comment" rows="5" name="comment"></textarea>
+                    </div>
+                </div><!-- comment row -->
                 <div class="my-5 pb-5 text-center">
                     <button type="submit" class="btn btn-secondary">Submit</button>
                 </div>

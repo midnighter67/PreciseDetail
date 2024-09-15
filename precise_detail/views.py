@@ -16,11 +16,12 @@ def estimate(request):
     url = request.META.get('HTTP_REFERER')
     if request.method == "POST":
         form = EstimateForm(request.POST)
+        print(form)
         if form.is_valid():
             print("form is valid")
             try:
-                first = request.POST['first']
-                last = request.POST['last']
+                name = request.POST['name']
+                # last = request.POST['last']
                 email = request.POST['email']
                 phone = request.POST['phone']
                 address = request.POST['address']
@@ -31,8 +32,9 @@ def estimate(request):
                 sqft = request.POST['sqft']
                 pets = request.POST['pets']
                 frequency = request.POST['frequency']
+                comment = request.POST['comment']
                 msg = "User info:" + "\n" + \
-                    "name:  " + last + ', ' + first + "\n"  + \
+                    "name:  " + name + "\n"  + \
                     "email:  " + email + "\n" + \
                     "phone:  " + phone + "\n" + \
                     "address:  " + address + "\n" + \
@@ -42,8 +44,8 @@ def estimate(request):
                     "bathrooms:  " + bath + "\n" + \
                     "area:  " + sqft + "\n" + \
                     "pets:  " + pets + "\n" + \
-                    "frequency:  " + frequency
-                            
+                    "frequency:  " + frequency + "\n" + \
+                    "comment:" + comment
                 send_mail(
                     "Precise Detail Estimate Request",
                     msg,
@@ -52,9 +54,9 @@ def estimate(request):
                     fail_silently=False,
                 )
             except SMTPException as e:
-                print(e)
                 messages.success(request, ('Submit failed'))
                 return redirect(url)
+            """
             data = Estimate()
             data.first = form.cleaned_data.get('first') #['first']
             data.last = form.cleaned_data.get('last') #['last']
@@ -69,21 +71,22 @@ def estimate(request):
             data.pets = form.cleaned_data.get('pets') #['pets']
             data.frequency = form.cleaned_data.get('frequency') #['frequency']
             data.save()
-            messages.success(request, ('estimate data saved'))
-            
+            """
+            messages.success(request, ('request sent'))
         else:
             print("form is invalid")
             messages.success(request, ('Missing required fields'))        
             return render(request, 'estimate.html', {})
     else:
-        return render(request, 'estimate.html', {})
+        form = EstimateForm()
+        # return render(request, 'estimate.html', {})
         
-    return render(request, 'estimate.html', {})
+    return render(request, 'estimate.html', {'form': form})
 
 def about(request):
-    """ Form for quote request  """
+
     return render(request, 'about.html', {})
 
 def services(request):
-    """ Form for quote request  """
+
     return render(request, 'services.html', {})
