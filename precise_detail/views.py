@@ -5,6 +5,8 @@ from smtplib import SMTPException
 from django.contrib import messages
 from django.conf import settings
 from django.core.mail import send_mail, EmailMessage
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
 
 
 def home(request):
@@ -16,13 +18,13 @@ def estimate(request):
     url = request.META.get('HTTP_REFERER')
     if request.method == "POST":
         form = EstimateForm(request.POST)
-        print(form)
         if form.is_valid():
-            print("form is valid")
-            try:
+            try: 
                 name = request.POST['name']
-                # last = request.POST['last']
-                email = request.POST['email']
+                try:
+                    email = request.POST['email']
+                except ValidationError:
+                    raise form.ValidationError("invalid email")
                 phone = request.POST['phone']
                 address = request.POST['address']
                 city = request.POST['city']
@@ -55,7 +57,7 @@ def estimate(request):
                 )
             except SMTPException as e:
                 messages.success(request, ('Submit failed'))
-                return redirect(url)
+                return render(request, 'estimate.html', {'form': form})
             """
             data = Estimate()
             data.first = form.cleaned_data.get('first') #['first']
@@ -74,14 +76,13 @@ def estimate(request):
             """
             messages.success(request, ('request sent'))
         else:
-            print("form is invalid")
             messages.success(request, ('Missing required fields'))        
             return render(request, 'estimate.html', {})
     else:
         form = EstimateForm()
         # return render(request, 'estimate.html', {})
         
-    return render(request, 'estimate.html', {'form': form})
+    return render(request, 'estimate.html', {})
 
 def about(request):
 

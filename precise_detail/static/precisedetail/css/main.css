@@ -173,6 +173,10 @@ h1:first-child{
   text-align: center;
 }
 
+.form-control::placeholder {
+  color: lightgray;
+}
+
 /* end estimate page */
 /* ------------------ */
 /* services page */
