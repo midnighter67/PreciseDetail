@@ -77,10 +77,6 @@ body {
 }
 
 .home-text p:first-child {
-  /**text-wrap: wrap;
-  font-size: 1.2em;
-  padding: 10px 15px 10px 15;
-  font-family:'Times New Roman', Times, serif;**/
   font-family:'Times New Roman';
   font-size: 1.5vw;
 }
@@ -136,7 +132,7 @@ h1:first-child{
   background-color: #faf8f5;
 }
 
-.estimate-cartoon-image {
+.estimate-cartoon-image img{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -229,10 +225,9 @@ h1:first-child{
   font-size: 1.5vw;
 }
 
-#image-roses {
+.image-roses img {
   max-width: 100%;
   height: auto;
-  /* height: 500px; */
   opacity: 0.9;
 }
 
@@ -326,8 +321,13 @@ h1:first-child{
   align-items: center;
 }
 
+.footer-logo img {
+  width: 100%;
+  height: auto;
+}
+
 .footer-phone {
-  font-size: 30px;
+  font-size: 4vw;
   color: black;
 }
 
@@ -338,3 +338,175 @@ h1:first-child{
 }
 
 /* end footer section */
+
+
+/* -------------------------------------------------------------------- */
+/* -------------------------------------------------------------------- */
+
+
+/* mobile layout */
+
+@media screen and (max-width: 950px) {
+  .container-fluid {
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .navbar-collapse .navbar-nav .nav-item a {
+    font-size: 3vw;
+  }
+
+  .page-header p {
+    font-size: 4vw;
+  }
+
+  /* header */
+  .navbar-toggler {
+    margin-top: 5%;
+  }
+
+
+  #header-phone {
+    font-size: 3vw;
+    margin: 20px 10px 0 0;
+  }
+
+  .header-button {
+    display: none;
+  }
+
+   /* end header */
+
+   /* home page */
+
+  .home-image {
+    display: none;
+  }
+
+  .home-text p:first-child {
+    font-size: 5vw;
+    margin: 5px !important;
+  }
+
+  .spacer {
+    display: none;
+  }
+
+  .section-3-text {
+    margin:0;
+    padding:0;
+  }
+
+  .section-3-text h1 {
+    font-size: 3.2vw;
+  }
+  
+  .section-3-text p:nth-child(2) {
+    font-size: 2.5vw;
+  }
+  
+  .section-3-text p:nth-child(3) {
+    font-size: 4vw;
+  }
+  /* end home page */
+
+  /* about page */
+
+  .about-text p:nth-child(-n+2) {
+    font-size: 3vw;
+    padding: 0 20px 0 20px;
+  }
+
+  .about-why-text p {
+    font-size: 3vw;
+  }
+
+  .checklist {
+    text-align: center;
+  }
+
+  .checklist ul {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .checklist ul li {
+    font-size: 3vw;
+  }
+
+  /* end about page */
+
+  /* services page */
+
+  .services-text p {
+    font-size: 3.5vw;
+    margin: 0 20px 0 20px;
+  }
+
+  .service-list {
+    padding-left: 30px;
+  }
+
+  .service-list h4 {
+    font-size: 5vw;
+  }
+
+  .service-list ul li {
+    font-size: 4vw;
+  }
+
+  /* end services page */
+
+  /* estimate page */
+
+  .estimate-cartoon-image {
+    display: none;
+  }
+
+  .required h6 {
+    font-size: 2.5vw;
+  }
+
+  .form-group label {
+    font-size: 2.5vw;
+  }
+
+  optgroup {
+    font-size: 2.5vw;
+  }
+
+  .option-text {
+    display: none;
+  }
+
+  select {
+    font-size: 2.5vw;
+  }
+
+  .form-group input::placeholder {
+    font-size: 2.7vw;
+  }
+
+  .estimate-form {
+    margin: 0 30px 0 0;
+  }
+
+  /* end estimate page */
+
+/* footer */
+  .quick-links {
+    display: none;
+  }
+
+  .footer-logo {
+    width: 20%;
+  }
+
+  .site-footer h3 {
+    font-size: 4vw;
+  }
+
+  .service-area {
+    font-size: 3vw;
+  }
+}

@@ -69,22 +69,26 @@
                     <div class="col form-group">
                         <label for="bedrooms" class="ms-1">Bedrooms</label>
                         <select id="bedrooms" class="form-select" name="bed">
-                            <option selected># bedrooms</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5+</option>
+                            <optgroup>
+                                <option selected class="option-text"></option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5+</option>
+                            </optgroup>
                         </select>
                     </div>
                     <div class="col form-group">
                         <label for="bathrooms" class="ms-1">Bathrooms</label>
                         <select id="bathrooms" class="form-select" name="bath">
-                            <option selected class="form-control"># bathrooms</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4+</option>
+                            <optgroup>
+                                <option selected class="form-control"><span class="option-text"></span></option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4+</option>
+                            </optgroup>
                         </select>
                     </div>
                     <div class="col form-group">
@@ -95,18 +99,22 @@
                     <div class="col form-group">
                         <label for="pets" class="ms-1">Pets</label>
                         <select id="pets" class="form-select" name="pets">
-                            <option selected>Pets?</option>
-                            <option>No</option>
-                            <option>Yes</option>
+                            <optgroup>
+                                <option selected></option>
+                                <option>No</option>
+                                <option>Yes</option>
+                            </optgroup>
                         </select>
                     </div>
                     <div class="col form-group">
                         <label for="frequency" class="ms-1">Frequency</label>
                         <select id="frequency" class="form-select" name="frequency">
-                            <option selected>Frequency</option>
-                            <option>Weekly</option>
-                            <option>Bi-weekly</option>
-                            <option>Monthly</option>
+                            <optgroup>
+                                <option selected></option>
+                                <option>Weekly</option>
+                                <option>Bi-weekly</option>
+                                <option>Monthly</option>
+                            </optgroup>
                         </select>
                     </div>
                 </div><!-- bed, bath, sqtf, and pets row -->
@@ -122,8 +130,8 @@
             </form>
         </div><!-- column 1 -->
 
-        <div class="col col-lg-4 ms-5 my-5 py-5">
-            <img src="{% static 'precisedetail/images/cleaner_duster_vacuum.png' %}" class="estimate-cartoon-image responsive" alt="cartoon maid with duster and vacuum" />
+        <div class="estimate-cartoon-image col col-lg-4 ms-5 my-5 py-5">
+            <img src="{% static 'precisedetail/images/cleaner_duster_vacuum.png' %}" alt="cartoon maid with duster and vacuum" />
         </div><!-- column 2 -->
     </div><!-- row -->
 </div><!-- container -->
