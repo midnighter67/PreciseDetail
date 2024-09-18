@@ -15,26 +15,22 @@ def home(request):
 
 def estimate(request):
     """ Process form data and send alert email  """
-    url = request.META.get('HTTP_REFERER')
-    if request.method == "POST":
-        form = EstimateForm(request.POST)
+    if request.method == "POST":  # if submit button is clicked
+        form = EstimateForm(request.POST or None)
         if form.is_valid():
             try: 
                 name = form.cleaned_data['name']
-                try:
-                    email = form.cleaned_data['email']
-                except ValidationError:
-                    raise form.ValidationError("invalid email")
+                email = form.cleaned_data['email']
                 phone = form.cleaned_data['phone']
                 address = form.cleaned_data['address']
-                city = form.cleaned_data['city']
-                zip = form.cleaned_data['zip']
-                bed = form.cleaned_data['bed']
-                bath = form.cleaned_data['bath']
-                sqft = form.cleaned_data['sqft']
-                pets = form.cleaned_data['pets']
-                frequency = form.cleaned_data['frequency']
-                comment = form.cleaned_data['comment']
+                city = form.cleaned_data['city'] or ""
+                zip = form.cleaned_data['zip'] or ""
+                bed = form.cleaned_data['bed'] or ""
+                bath = form.cleaned_data['bath'] or ""
+                sqft = form.cleaned_data['sqft'] or ""
+                pets = form.cleaned_data['pets'] or ""
+                frequency = form.cleaned_data['frequency'] or ""
+                comment = form.cleaned_data['comment'] or ""
                 msg = "User info:" + "\n" + \
                     "name:  " + name + "\n"  + \
                     "email:  " + email + "\n" + \
@@ -58,31 +54,16 @@ def estimate(request):
             except SMTPException as e:
                 messages.success(request, ('Submit failed'))
                 return render(request, 'estimate.html', {'form': form})
+            form.save()
             
-            data = Estimate()
-            data.name = name 
-            data.email = email 
-            data.phone = phone 
-            data.address = address 
-            data.city = city 
-            data.zip = zip 
-            data.bed = bed 
-            data.bath = bath 
-            data.sqft = sqft 
-            data.pets = pets 
-            data.frequency = frequency
-            data.comment = comment 
-            data.save()
-            
-            messages.success(request, ('request sent'))
+            messages.success(request, ('You\'re estimate request has been sent!'))
+            return redirect('home')
         else:
             messages.success(request, ('Missing required fields'))        
-            return render(request, 'estimate.html', {'form': form})
+            return redirect('estimate')
     else:
-        form = EstimateForm()
-        return render(request, 'estimate.html', {'form': form})
+        return render(request, 'estimate.html', {})
         
-    return render(request, 'estimate.html', {})
 
 def about(request):
 
