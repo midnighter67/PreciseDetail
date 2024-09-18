@@ -20,21 +20,21 @@ def estimate(request):
         form = EstimateForm(request.POST)
         if form.is_valid():
             try: 
-                name = request.POST['name']
+                name = form.cleaned_data['name']
                 try:
-                    email = request.POST['email']
+                    email = form.cleaned_data['email']
                 except ValidationError:
                     raise form.ValidationError("invalid email")
-                phone = request.POST['phone']
-                address = request.POST['address']
-                city = request.POST['city']
-                zip = request.POST['zip']
-                bed = request.POST['bed']
-                bath = request.POST['bath']
-                sqft = request.POST['sqft']
-                pets = request.POST['pets']
-                frequency = request.POST['frequency']
-                comment = request.POST['comment']
+                phone = form.cleaned_data['phone']
+                address = form.cleaned_data['address']
+                city = form.cleaned_data['city']
+                zip = form.cleaned_data['zip']
+                bed = form.cleaned_data['bed']
+                bath = form.cleaned_data['bath']
+                sqft = form.cleaned_data['sqft']
+                pets = form.cleaned_data['pets']
+                frequency = form.cleaned_data['frequency']
+                comment = form.cleaned_data['comment']
                 msg = "User info:" + "\n" + \
                     "name:  " + name + "\n"  + \
                     "email:  " + email + "\n" + \
@@ -47,7 +47,7 @@ def estimate(request):
                     "area:  " + sqft + "\n" + \
                     "pets:  " + pets + "\n" + \
                     "frequency:  " + frequency + "\n" + \
-                    "comment:" + comment
+                    "comment:  " + comment
                 send_mail(
                     "Precise Detail Estimate Request",
                     msg,
@@ -60,27 +60,27 @@ def estimate(request):
                 return render(request, 'estimate.html', {'form': form})
             
             data = Estimate()
-            data.name = form.cleaned_data.get('name') #['name']
-            # data.last = form.cleaned_data.get('last') 
-            data.email = form.cleaned_data.get('email') #['email']
-            data.phone = form.cleaned_data.get('phone') #['phone']
-            data.address = form.cleaned_data.get('address') #['address']
-            data.city = form.cleaned_data.get('city') #['city']
-            data.zip = form.cleaned_data.get('zip') #['zip']
-            data.bed = form.cleaned_data.get('bed') #['bed']
-            data.bath = form.cleaned_data.get('bath') #['bath']
-            data.sqft = form.cleaned_data.get('sqft') #['sqft']
-            data.pets = form.cleaned_data.get('pets') #['pets']
-            data.frequency = form.cleaned_data.get('frequency') #['frequency']
+            data.name = name 
+            data.email = email 
+            data.phone = phone 
+            data.address = address 
+            data.city = city 
+            data.zip = zip 
+            data.bed = bed 
+            data.bath = bath 
+            data.sqft = sqft 
+            data.pets = pets 
+            data.frequency = frequency
+            data.comment = comment 
             data.save()
             
             messages.success(request, ('request sent'))
         else:
             messages.success(request, ('Missing required fields'))        
-            return render(request, 'estimate.html', {})
+            return render(request, 'estimate.html', {'form': form})
     else:
         form = EstimateForm()
-        # return render(request, 'estimate.html', {})
+        return render(request, 'estimate.html', {'form': form})
         
     return render(request, 'estimate.html', {})
 
