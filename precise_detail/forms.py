@@ -5,11 +5,11 @@ from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 
 
-"""
+
 class EstimateForm(forms.ModelForm):
     class Meta:
         model = Estimate
-        fields = ('first', 'last', 'email', 'phone', 'address', 'city', 'zip', 'bed', 'bath', 'sqft', 'pets', 'frequency')
+        fields = ('name', 'email', 'phone', 'address', 'city', 'zip', 'bed', 'bath', 'sqft', 'pets', 'frequency', 'comment')
 """
 
 class EstimateForm(forms.Form):
@@ -25,8 +25,8 @@ class EstimateForm(forms.Form):
     pets = forms.CharField(required=False, widget= forms.TextInput())
     frequency = forms.CharField(required=False, widget= forms.TextInput())
     comment = forms.CharField(required=False, widget= forms.Textarea())
-    
-    """
+"""
+"""
     def clean_me(self):  # validate name field
         super(EstimateForm, self).clean()
         name = self.cleaned_data.get('name')
@@ -48,7 +48,7 @@ class EstimateForm(forms.Form):
         if (address == ''):
             raise forms.ValidationError('this field is required')
         return self.cleaned_data
-    """
+"""
     
         
         

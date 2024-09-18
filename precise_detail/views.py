@@ -58,10 +58,10 @@ def estimate(request):
             except SMTPException as e:
                 messages.success(request, ('Submit failed'))
                 return render(request, 'estimate.html', {'form': form})
-            """
+            
             data = Estimate()
-            data.first = form.cleaned_data.get('first') #['first']
-            data.last = form.cleaned_data.get('last') #['last']
+            data.name = form.cleaned_data.get('name') #['name']
+            # data.last = form.cleaned_data.get('last') 
             data.email = form.cleaned_data.get('email') #['email']
             data.phone = form.cleaned_data.get('phone') #['phone']
             data.address = form.cleaned_data.get('address') #['address']
@@ -73,7 +73,7 @@ def estimate(request):
             data.pets = form.cleaned_data.get('pets') #['pets']
             data.frequency = form.cleaned_data.get('frequency') #['frequency']
             data.save()
-            """
+            
             messages.success(request, ('request sent'))
         else:
             messages.success(request, ('Missing required fields'))        
