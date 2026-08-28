@@ -54,8 +54,12 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = True
+if not DEBUG:
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
+else:
+    # SECURE_PROXY_SSL_HEADER = none
+    SECURE_SSL_REDIRECT = False
 
 ROOT_URLCONF = 'cleaningsite.urls'
 
@@ -83,16 +87,20 @@ WSGI_APPLICATION = 'cleaningsite.wsgi.application'
 
 DATABASES = {
     'default': {
+        'default': dj_database_url.config(
+            default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
+            conn_max_age=600
+        )
+        # 'ENGINE': 'django.db.backends.postgresql_psychopg2',     
         #'ENGINE': 'django.db.backends.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql_psychopg2',
         #'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
 #---- This section is for using postgresql db locally ----
-DATABASES['default'] = dj_database_url.config(default='DATABASE_URL')
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+# DATABASES['default'] = dj_database_url.config(default='DATABASE_URL')
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
 #---- End postresql section ----
 
 
